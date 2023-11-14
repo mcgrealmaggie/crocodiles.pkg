@@ -19,6 +19,15 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/reference/ODBA.html</loc>
+  </url>
+  <url>
+    <loc>/reference/absValues.html</loc>
+  </url>
+  <url>
+    <loc>/reference/createBAOPlot.html</loc>
+  </url>
+  <url>
     <loc>/reference/index.html</loc>
   </url>
 </urlset>
