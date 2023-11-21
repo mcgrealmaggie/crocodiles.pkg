@@ -12,8 +12,8 @@ License: MIT + file LICENSE
 Depends:
   R(>= 2.10), tidyverse
 Imports: 
-  tidyverse, broom, ggplot2, devtools, credentials
-RoxygenNote: 7.1.1
+  tidyverse, broom, ggplot2, devtools, credentials, readr
+RoxygenNote: 7.2.3
 Suggests:
   knitr,
   rmarkdown
