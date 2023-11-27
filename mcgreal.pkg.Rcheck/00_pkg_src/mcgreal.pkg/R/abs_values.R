@@ -17,7 +17,7 @@
 #'
 
 absValues <- function(data, col, new_col){
-  new <- data %>% 
+ new <- data %>% 
     mutate(new = abs({{col}})) %>% 
     rename({{new_col}} := new) 
   return(new)

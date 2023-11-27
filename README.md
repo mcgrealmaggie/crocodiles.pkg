@@ -1,4 +1,4 @@
-# mcgreal.pkg
-## An R package for processing animal-borne satellite tracker data from various sensors onboard the device
+# crocodiles.pkg
+## An R package for processing and visualizing data obtained from multisensor animal-borne satellite trackers
 
-This package is intended for users of custom-built satellite trackers with the purpose of visualizing and analyzing raw data of measurements collected from various sensors onboard the device: GPS, Arduino IMU, and more. 
+This package is intended for users of custom-built multisensor satellite trackers with the purpose of visualizing and analyzing raw data of measurements collected from sensors on-board the device: GPS, Arduino IMU, and more. 

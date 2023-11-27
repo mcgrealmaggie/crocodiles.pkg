@@ -10,14 +10,14 @@ Authors@R: c(
   )
 Description: This package is intended for users of custom-built satellite trackers with the purpose of visualizing and analyzing raw data of measurements collected from various sensors onboard the device: GPS, Arduino IMU, and more. 
 License: MIT + file LICENSE
-Dependents: R(>=2.10)
-Imports: tidyverse, broom
-RoxygenNote: 7.1.1
+Depends: R(>= 2.10), tidyverse
+Imports: tidyverse, broom, ggplot2, devtools, credentials, readr
+RoxygenNote: 7.2.3
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 NeedsCompilation: no
-Packaged: 2023-10-31 19:14:03 UTC; r2159919
+Packaged: 2023-11-21 19:57:43 UTC; r2159919
 Author: Maggie McGreal [cre, aut]
 Maintainer: Maggie McGreal <maggie.mcgreal@selu.edu>

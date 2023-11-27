@@ -72,7 +72,7 @@
                         <h4 data-toc-skip class="author">Maggie
 McGreal</h4>
             
-            <h4 data-toc-skip class="date">2023-11-14</h4>
+            <h4 data-toc-skip class="date">2023-11-21</h4>
       
       
       <div class="hidden name"><code>MovementBehaviorTutorial.rmd</code></div>
@@ -81,30 +81,54 @@ McGreal</h4>
 
     
     
+<p>#install.packages(“googlesheets4”)</p>
 <p>The purpose of this R package is for analysis and visualization of
 remotely transmitted movement and behavioral data from animal-borne
 devices…. (behavior classification, ) This package will work with data
 obtained from custom-built satellite trackers developed by Dr. Youngho
 Shin This data includes measurements obtained from sensors such as: IMU,
 GPS, real-time clock, depth recorder, etc.</p>
-<div class="section level2">
-<h2 id="r-markdown">R Markdown<a class="anchor" aria-label="anchor" href="#r-markdown"></a>
-</h2>
-<p>This is an R Markdown document. Markdown is a simple formatting
-syntax for authoring HTML, PDF, and MS Word documents. For more details
-on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="external-link uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be
-generated that includes both content as well as the output of any
-embedded R code chunks within the document. You can embed an R code
-chunk like this:</p>
-</div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://googlesheets4.tidyverse.org" class="external-link">googlesheets4</a></span><span class="op">)</span></span>
+<span><span class="fu">googlesheets4</span><span class="fu">::</span><span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/gs4_deauth.html" class="external-link">gs4_deauth</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">alligators</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html" class="external-link">read_sheet</a></span><span class="op">(</span><span class="st">"https://docs.google.com/spreadsheets/d/1ttNjX-C-NFSx6O6GAsW5fqggtlooQHCaGRS8zLAikbk/edit#gid=1117199751"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#Install the package from git hub</span></span>
+<span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"mcgrealmaggie/crocodiles.pkg"</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Using github PAT from envvar GITHUB_PAT</span></span></code></pre>
+<pre><code><span><span class="co">## Downloading GitHub repo mcgrealmaggie/crocodiles.pkg@HEAD</span></span></code></pre>
+<pre><code><span><span class="co">## rlang     (1.1.1   -&gt; 1.1.2) [CRAN]</span></span>
+<span><span class="co">## lifecycle (1.0.3   -&gt; 1.0.4) [CRAN]</span></span>
+<span><span class="co">## rprojroot (2.0.3   -&gt; 2.0.4) [CRAN]</span></span>
+<span><span class="co">## waldo     (0.5.1   -&gt; 0.5.2) [CRAN]</span></span>
+<span><span class="co">## evaluate  (0.22    -&gt; 0.23 ) [CRAN]</span></span>
+<span><span class="co">## xfun      (0.40    -&gt; 0.41 ) [CRAN]</span></span>
+<span><span class="co">## stringr   (1.5.0   -&gt; 1.5.1) [CRAN]</span></span>
+<span><span class="co">## stringi   (1.7.12  -&gt; 1.8.1) [CRAN]</span></span>
+<span><span class="co">## htmltools (0.5.6.1 -&gt; 0.5.7) [CRAN]</span></span>
+<span><span class="co">## shiny     (1.7.5.1 -&gt; 1.8.0) [CRAN]</span></span>
+<span><span class="co">## httr2     (0.2.3   -&gt; 1.0.0) [CRAN]</span></span>
+<span><span class="co">## dplyr     (1.1.3   -&gt; 1.1.4) [CRAN]</span></span></code></pre>
+<pre><code><span><span class="co">## Installing 12 packages: rlang, lifecycle, rprojroot, waldo, evaluate, xfun, stringr, stringi, htmltools, shiny, httr2, dplyr</span></span></code></pre>
+<pre><code><span><span class="co">## Installing packages into '/tmp/Rtmp3IjEcu/temp_libpathc7777ead70e'</span></span>
+<span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
+<pre><code><span><span class="co">## <span style="color: #00BBBB;">──</span> <span style="color: #00BBBB;">R CMD build</span> <span style="color: #00BBBB;">─────────────────────────────────────────────────────────────────</span></span></span>
+<span><span class="co">## * checking for file ‘/tmp/Rtmp1qMifk/remotes115d2003058/mcgrealmaggie-crocodiles.pkg-53286a7/DESCRIPTION’ ... OK</span></span>
+<span><span class="co">## * preparing ‘mcgreal.pkg’:</span></span>
+<span><span class="co">## * checking DESCRIPTION meta-information ... OK</span></span>
+<span><span class="co">## * checking for LF line-endings in source and make files and shell scripts</span></span>
+<span><span class="co">## * checking for empty or unneeded directories</span></span>
+<span><span class="co">## * looking to see if a ‘data/datalist’ file should be added</span></span>
+<span><span class="co">## * building ‘mcgreal.pkg_0.1.tar.gz’</span></span>
+<span><span class="co">## Warning: invalid uid value replaced by that for user 'nobody'</span></span></code></pre>
+<pre><code><span><span class="co">## Installing package into '/tmp/Rtmp3IjEcu/temp_libpathc7777ead70e'</span></span>
+<span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
+      </div>
 
 </div>
 

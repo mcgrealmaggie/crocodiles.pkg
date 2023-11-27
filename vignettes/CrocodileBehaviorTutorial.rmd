@@ -1,0 +1,68 @@
+---
+title: "Crocodile Behavior Tutorial"
+author: "Maggie McGreal"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+
+```{r}
+install.packages("googlesheets4")
+
+```
+
+
+The purpose of this R package is for analysis and visualization of remotely transmitted movement and behavioral data from animal-borne devices.... (behavior classification, )
+This package will work with data obtained from custom-built satellite trackers developed by Dr. Youngho Shin
+This data includes measurements obtained from sensors such as: IMU, GPS, real-time clock, depth recorder, etc.
+
+```{r}
+library(googlesheets4)
+googlesheets4::gs4_deauth()
+crocodiles <- read_sheet("https://docs.google.com/spreadsheets/d/1b4j42SbcN0GZR6KgHRtEmRe5-D0qzYM1mZWo9-KC4d4/edit?usp=sharing")
+
+```
+
+
+```{r}
+#Install the package from git hub
+
+devtools::install_github("mcgrealmaggie/crocodiles.pkg")
+
+
+```
+
+Function 1: sensorData
+```{r}
+data <- sensorData("crocodile.csv")
+```
+
+Function 2: createDatetime
+```{r}
+data <- createDatetime(data, "date", "time")
+```
+
+Function 3: calculateODBA
+```{r}
+data <- calculateODBA(data = data, X, Y, Z)
+```
+
+Function 4: performLM
+```{r}
+lm <- performLM(data, "ODBA", "behavior")
+```
+
+Function 5: plotModel
+```{r}
+plotModel(data, "behavior", "ODBA")
+```
+
+Function 6: mapODBA
+```{r}
+mapODBA(data, "long", "lat", "ODBA")
+```
+
+Function 7: mapBehavior
+```{r}
+mapBehavior(data, "long", "lat", "behavior")
+```

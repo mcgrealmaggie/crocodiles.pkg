@@ -3,3 +3,4 @@
 export(ODBA)
 export(absValues)
 export(createBAOPlot)
+export(readData)
