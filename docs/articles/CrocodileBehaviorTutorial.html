@@ -52,6 +52,9 @@
 <li>
       <a href="../articles/CrocodileBehaviorTutorial.html">Crocodile Behavior Tutorial</a>
     </li>
+    <li>
+      <a href="../articles/CrocodileBehaviorTutorialPresentation.html">Crocodile Behavior Tutorial</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -81,45 +84,21 @@ McGreal</h4>
 
     
     
-<p>#An Introduction to My R Package</p>
+<div class="section level2">
+<h2 id="an-introduction-to-my-r-package">An Introduction to My R Package<a class="anchor" aria-label="anchor" href="#an-introduction-to-my-r-package"></a>
+</h2>
 <p>The purpose of this R package is for analysis and visualization of
 remotely transmitted movement and behavioral data from animal-borne
-devices…. (behavior classification, ) This package will work with data
-obtained from custom-built satellite trackers developed by Dr. Youngho
-Shin This data includes measurements obtained from sensors such as: IMU,
-GPS, real-time clock, depth recorder, etc.</p>
-<p>#Installing the R Package</p>
-<p>To install the R package enter the following code into your console.
-This package will include functions from vegan and tidyverse as well as
-functions unique to this package.</p>
+devices. This package will work with data obtained from custom-built
+satellite trackers developed by Dr. Youngho Shin. These data will
+include measurements obtained from sensors such as: IMU, GPS, real-time
+clock, depth recorder, and more.</p>
+</div>
+<div class="section level2">
+<h2 id="load-packages">Load Packages<a class="anchor" aria-label="anchor" href="#load-packages"></a>
+</h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"mcgrealmaggie/crocodiles.pkg"</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Using github PAT from envvar GITHUB_PAT</span></span></code></pre>
-<pre><code><span><span class="co">## Downloading GitHub repo mcgrealmaggie/crocodiles.pkg@HEAD</span></span></code></pre>
-<pre><code><span><span class="co">## </span></span>
-<span><span class="co">## <span style="color: #00BBBB;">──</span> <span style="color: #00BBBB;">R CMD build</span> <span style="color: #00BBBB;">─────────────────────────────────────────────────────────────────</span></span></span>
-<span><span class="co">## * checking for file ‘/tmp/Rtmp8OLu35/remotes10d65d8b3739/mcgrealmaggie-crocodiles.pkg-6270389/DESCRIPTION’ ... OK</span></span>
-<span><span class="co">## * preparing ‘mcgreal.pkg’:</span></span>
-<span><span class="co">## * checking DESCRIPTION meta-information ... OK</span></span>
-<span><span class="co">## * checking for LF line-endings in source and make files and shell scripts</span></span>
-<span><span class="co">## * checking for empty or unneeded directories</span></span>
-<span><span class="co">## * looking to see if a ‘data/datalist’ file should be added</span></span>
-<span><span class="co">## * building ‘mcgreal.pkg_0.1.tar.gz’</span></span>
-<span><span class="co">## Warning: invalid uid value replaced by that for user 'nobody'</span></span></code></pre>
-<pre><code><span><span class="co">## Installing package into '/tmp/Rtmp9DPjq1/temp_libpath5922bb3618d'</span></span>
-<span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"mcgreal.pkg"</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Installing package into '/tmp/Rtmp9DPjq1/temp_libpath5922bb3618d'</span></span>
-<span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
-<pre><code><span><span class="co">## Warning: package 'mcgreal.pkg' is not available for this version of R</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## A version of this package for your version of R might be available elsewhere,</span></span>
-<span><span class="co">## see the ideas at</span></span>
-<span><span class="co">## https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages</span></span></code></pre>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">mcgreal.pkg</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Loading required package: tidyverse</span></span></code></pre>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## ── <span style="font-weight: bold;">Attaching core tidyverse packages</span> ──────────────────────── tidyverse 2.0.0 ──</span></span>
 <span><span class="co">## <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">dplyr    </span> 1.1.4     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">readr    </span> 2.1.4</span></span>
 <span><span class="co">## <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">forcats  </span> 1.0.0     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">stringr  </span> 1.5.1</span></span>
@@ -130,29 +109,102 @@ functions unique to this package.</p>
 <span><span class="co">## <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span> masks <span style="color: #0000BB;">stats</span>::filter()</span></span>
 <span><span class="co">## <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>    masks <span style="color: #0000BB;">stats</span>::lag()</span></span>
 <span><span class="co">## <span style="color: #00BBBB;">ℹ</span> Use the conflicted package (<span style="color: #0000BB; font-style: italic;">&lt;http://conflicted.r-lib.org/&gt;</span>) to force all conflicts to become errors</span></span></code></pre>
-<p>#Install Dependencies</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://broom.tidymodels.org/" class="external-link">broom</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span> </span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span> </span></code></pre></div>
+<pre><code><span><span class="co">## Loading required package: usethis</span></span></code></pre>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/credentials/" class="external-link">credentials</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Found git version 2.25.1</span></span>
+<span><span class="co">## Supported HTTPS credential helpers: cache, store</span></span>
+<span><span class="co">## Found OpenSSH_8.2p1 Ubuntu-4ubuntu0.9, OpenSSL 1.1.1f  31 Mar 2020</span></span>
+<span><span class="co">## No key found. Use ssh_keygen() to generate one!</span></span></code></pre>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org" class="external-link">readr</a></span><span class="op">)</span> </span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://wilkelab.org/cowplot/" class="external-link">cowplot</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## </span></span>
+<span><span class="co">## Attaching package: 'cowplot'</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## The following object is masked from 'package:lubridate':</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##     stamp</span></span></code></pre>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org" class="external-link">lubridate</a></span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ggmap"</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Installing package into '/tmp/RtmpFscjDg/temp_libpath1314203353'</span></span>
+<span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Installing package into '/tmp/Rtmp9DPjq1/temp_libpath5922bb3618d'</span></span>
+<pre><code><span><span class="co">## Installing package into '/tmp/RtmpFscjDg/temp_libpath1314203353'</span></span>
 <span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://remotes.r-lib.org" class="external-link">remotes</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"googlesheets4"</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Installing package into '/tmp/Rtmp9DPjq1/temp_libpath5922bb3618d'</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"googlesheets4"</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Installing package into '/tmp/RtmpFscjDg/temp_libpath1314203353'</span></span>
 <span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/dkahle/ggmap" class="external-link">ggmap</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## <span style="color: #00BB00;">ℹ</span> Google's Terms of Service: <span style="color: #0000BB; font-style: italic;">&lt;https://mapsplatform.google.com&gt;</span></span></span>
+<span><span class="co">##   Stadia Maps' Terms of Service: <span style="color: #0000BB; font-style: italic;">&lt;https://stadiamaps.com/terms-of-service/&gt;</span></span></span>
+<span><span class="co">##   OpenStreetMap's Tile Usage Policy: <span style="color: #0000BB; font-style: italic;">&lt;https://operations.osmfoundation.org/policies/tiles/&gt;</span></span></span>
+<span><span class="co">## <span style="color: #00BB00;">ℹ</span> Please cite <span style="color: #0000BB;">ggmap</span> if you use it! Use `citation("ggmap")` for details.</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## Attaching package: 'ggmap'</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## The following object is masked from 'package:cowplot':</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##     theme_nothing</span></span></code></pre>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://remotes.r-lib.org" class="external-link">remotes</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## </span></span>
+<span><span class="co">## Attaching package: 'remotes'</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## The following objects are masked from 'package:devtools':</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##     dev_package_deps, install_bioc, install_bitbucket, install_cran,</span></span>
+<span><span class="co">##     install_deps, install_dev, install_git, install_github,</span></span>
+<span><span class="co">##     install_gitlab, install_local, install_svn, install_url,</span></span>
+<span><span class="co">##     install_version, update_packages</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## The following object is masked from 'package:usethis':</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##     git_credentials</span></span></code></pre>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://googlesheets4.tidyverse.org" class="external-link">googlesheets4</a></span><span class="op">)</span></span></code></pre></div>
-<p>#Download Data</p>
+</div>
+<div class="section level2">
+<h2 id="installing-the-r-package">Installing the R Package<a class="anchor" aria-label="anchor" href="#installing-the-r-package"></a>
+</h2>
+<p>To install the R package enter the following code into your console.
+This package will include functions from vegan and tidyverse as well as
+functions unique to this package.</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#remotes::install_github("mcgrealmaggie/crocodiles.pkg")</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"mcgreal.pkg"</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Installing package into '/tmp/RtmpFscjDg/temp_libpath1314203353'</span></span>
+<span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
+<pre><code><span><span class="co">## Warning: package 'mcgreal.pkg' is not available for this version of R</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## A version of this package for your version of R might be available elsewhere,</span></span>
+<span><span class="co">## see the ideas at</span></span>
+<span><span class="co">## https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages</span></span></code></pre>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">mcgreal.pkg</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="download-data">Download Data<a class="anchor" aria-label="anchor" href="#download-data"></a>
+</h2>
 <p>Run the following code to obtain and store the data for this
 tutorial.</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/gs4_deauth.html" class="external-link">gs4_deauth</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">croc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html" class="external-link">read_sheet</a></span><span class="op">(</span><span class="st">"https://docs.google.com/spreadsheets/d/17-DF8Riz_mkOL-KpFpe1K9W6FBnJdiWsziWZk_IOpiA/edit?usp=sharing"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #00BB00;">✔</span> Reading from <span style="color: #00BBBB;">croc</span>.</span></span></code></pre>
 <pre><code><span><span class="co">## <span style="color: #00BB00;">✔</span> Range <span style="color: #BBBB00;">croc.csv</span>.</span></span></code></pre>
 <p>Run the following code to preview the data.</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">croc</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 10</span></span></span>
 <span><span class="co">##       id date       time                  lat  long     X     Y     Z behavior  </span></span>
@@ -164,8 +216,16 @@ tutorial.</p>
 <span><span class="co">## <span style="color: #BCBCBC;">5</span> <span style="text-decoration: underline;">716</span>739 2021.05.18 1899-12-30 <span style="color: #949494;">19:36:35</span>  10.3 -<span style="color: #BB0000;">85.3</span> 0.973 1.03  -<span style="color: #BB0000;">1.98</span> gaping    </span></span>
 <span><span class="co">## <span style="color: #BCBCBC;">6</span> <span style="text-decoration: underline;">716</span>739 2021.05.19 1899-12-30 <span style="color: #949494;">19:36:36</span>  10.3 -<span style="color: #BB0000;">85.3</span> 0.797 1.34  -<span style="color: #BB0000;">2.46</span> swimming  </span></span>
 <span><span class="co">## <span style="color: #949494;"># ℹ 1 more variable: context &lt;chr&gt;</span></span></span></code></pre>
-<p>#Functions</p>
-<p>##Function 1: sensorData ###Data Cleaning</p>
+</div>
+<div class="section level2">
+<h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
+</h2>
+<div class="section level3">
+<h3 id="function-1-sensordata">Function 1: sensorData<a class="anchor" aria-label="anchor" href="#function-1-sensordata"></a>
+</h3>
+<div class="section level4">
+<h4 id="data-cleaning">Data Cleaning<a class="anchor" aria-label="anchor" href="#data-cleaning"></a>
+</h4>
 <p>These animal borne trackers collect continuous high frequency data,
 so the datasets obtained from them will be very large. For this reason,
 multiple kinds of analysis will be ran separately and it’s useful to
@@ -181,11 +241,11 @@ new column called “sample_ID” which numbers the rows in chronological
 order, to assure the GPS points follow the correct path.</p>
 <p>To obtain the cleaned data.frame, enter the following code into your
 R console.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sensorData.html">sensorData</a></span><span class="op">(</span><span class="va">croc</span>, <span class="st">"long"</span>, <span class="st">"lat"</span>, <span class="st">"X"</span>, <span class="st">"Y"</span>, <span class="st">"Z"</span>, <span class="st">"behavior"</span>, <span class="st">"sample_id"</span><span class="op">)</span></span></code></pre></div>
 <p>Run the following code to ensure the new data.frame contains the
 appropriate columns.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 7</span></span></span>
 <span><span class="co">##   sample_id  long   lat     X     Y     Z behavior        </span></span>
@@ -196,7 +256,14 @@ appropriate columns.</p>
 <span><span class="co">## <span style="color: #BCBCBC;">4</span>         4 -<span style="color: #BB0000;">85.3</span>  10.3 0.973 1.03  -<span style="color: #BB0000;">1.98</span> gaping          </span></span>
 <span><span class="co">## <span style="color: #BCBCBC;">5</span>         5 -<span style="color: #BB0000;">85.3</span>  10.3 0.973 1.03  -<span style="color: #BB0000;">1.98</span> gaping          </span></span>
 <span><span class="co">## <span style="color: #BCBCBC;">6</span>         6 -<span style="color: #BB0000;">85.3</span>  10.3 0.797 1.34  -<span style="color: #BB0000;">2.46</span> swimming</span></span></code></pre>
-<p>##Function 2: calculateODBA ###Derive Metrics</p>
+</div>
+</div>
+<div class="section level3">
+<h3 id="function-2-calculateodba">Function 2: calculateODBA<a class="anchor" aria-label="anchor" href="#function-2-calculateodba"></a>
+</h3>
+<div class="section level4">
+<h4 id="derive-metrics">Derive Metrics<a class="anchor" aria-label="anchor" href="#derive-metrics"></a>
+</h4>
 <p>One of the most exciting aspects of tri-axial accelerometers are
 their value in quantifying proxies for energy expenditure. By taking the
 sum of the absolute values of the three axes of acceleration
@@ -210,9 +277,16 @@ data.frame with the function calculateODBA(). This function contains
 arguments in which the data.frame and the 3 columns containing
 acceleration measurements (X, Y, Z) are identified and used to produce a
 new data.frame with the calculated ODBA column.</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/calculateODBA.html">calculateODBA</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">X</span>, <span class="va">Y</span>, <span class="va">Z</span><span class="op">)</span></span></code></pre></div>
-<p>##Function 3: runANOVA ###Analysis of Variance (ANOVA)</p>
+</div>
+</div>
+<div class="section level3">
+<h3 id="function-3-runanova">Function 3: runANOVA<a class="anchor" aria-label="anchor" href="#function-3-runanova"></a>
+</h3>
+<div class="section level4">
+<h4 id="analysis-of-variance-anova">Analysis of Variance (ANOVA)<a class="anchor" aria-label="anchor" href="#analysis-of-variance-anova"></a>
+</h4>
 <p>Are there notable differences in the average ODBA values across the
 various crocodile behaviors? Do different behaviors lead to
 statistically significant variations in activity levels?</p>
@@ -227,7 +301,7 @@ data.frame, ODBA as the response variable, and behavior as the
 predictor, and provide a summary of the ANOVA which aims to answer the
 question: Does the variation in ODBA differ across behaviors in
 crocodiles?</p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/runANOVA.html">runANOVA</a></span><span class="op">(</span><span class="va">data</span>, <span class="st">"ODBA"</span>, <span class="st">"behavior"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##              Df Sum Sq Mean Sq F value Pr(&gt;F)</span></span>
 <span><span class="co">## behavior      4   8.43   2.107   1.595  0.179</span></span>
@@ -235,47 +309,51 @@ crocodiles?</p>
 <pre><code><span><span class="co">##              Df Sum Sq Mean Sq F value Pr(&gt;F)</span></span>
 <span><span class="co">## behavior      4   8.43   2.107   1.595  0.179</span></span>
 <span><span class="co">## Residuals   129 170.35   1.321</span></span></code></pre>
-<p>##Function 5: plotODBA ###Visualize the relationship between ODBA and
-Behavior</p>
+</div>
+</div>
+<div class="section level3">
+<h3 id="function-5-plotodba">Function 5: plotODBA<a class="anchor" aria-label="anchor" href="#function-5-plotodba"></a>
+</h3>
+<div class="section level4">
+<h4 id="visualize-the-relationship-between-odba-and-behavior">Visualize the relationship between ODBA and Behavior<a class="anchor" aria-label="anchor" href="#visualize-the-relationship-between-odba-and-behavior"></a>
+</h4>
 <p>To fully understand the relationship between activity level and
 certain behaviors, it is useful to visualize it as a plot. The function
 plotODBA will use the same arguments as the ANOVA and provide you with a
 plot that plots ODBA levels according to behavior as well as the means
 and variance of ODBA for each of those behaviors.</p>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/plotODBA.html">plotODBA</a></span><span class="op">(</span><span class="va">data</span>, <span class="st">"behavior"</span>, <span class="st">"ODBA"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="CrocodileBehaviorTutorial_files/figure-html/unnamed-chunk-9-1.png" width="700"></p>
-<p>##Mapping Crocodile Movements ##Function 6: mapODBA ###Mapping by
-Activity Level</p>
+<p><img src="CrocodileBehaviorTutorial_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
+</div>
+</div>
+<div class="section level3">
+<h3 id="mapping-crocodile-movements">Mapping Crocodile Movements<a class="anchor" aria-label="anchor" href="#mapping-crocodile-movements"></a>
+</h3>
+</div>
+<div class="section level3">
+<h3 id="function-6-mapodba">Function 6: mapODBA<a class="anchor" aria-label="anchor" href="#function-6-mapodba"></a>
+</h3>
+<div class="section level4">
+<h4 id="mapping-by-activity-level">Mapping by Activity Level<a class="anchor" aria-label="anchor" href="#mapping-by-activity-level"></a>
+</h4>
 <p>The function mapODBA() creates a map from GPS data and colors the
 path according to corresponding ODBA values, allowing us to gain insight
 into where and how crocodiles distribute their energy across the
 landscape.</p>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/mapODBA.html">mapODBA</a></span><span class="op">(</span><span class="va">data</span>, <span class="st">"long"</span>, <span class="st">"lat"</span>, <span class="st">"ODBA"</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## <span style="color: #00BB00;">ℹ</span> Google's Terms of Service: <span style="color: #0000BB; font-style: italic;">&lt;https://mapsplatform.google.com&gt;</span></span></span>
-<span><span class="co">##   Stadia Maps' Terms of Service: <span style="color: #0000BB; font-style: italic;">&lt;https://stadiamaps.com/terms-of-service/&gt;</span></span></span>
-<span><span class="co">##   OpenStreetMap's Tile Usage Policy: <span style="color: #0000BB; font-style: italic;">&lt;https://operations.osmfoundation.org/policies/tiles/&gt;</span></span></span>
-<span><span class="co">## <span style="color: #00BB00;">ℹ</span> Please cite <span style="color: #0000BB;">ggmap</span> if you use it! Use `citation("ggmap")` for details.</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## Attaching package: 'cowplot'</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## The following object is masked from 'package:ggmap':</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">##     theme_nothing</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## The following object is masked from 'package:lubridate':</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">##     stamp</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## <span style="color: #BBBB00;">!</span> Bounding box given to Google - spatial extent only approximate.</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## <span style="color: #00BBBB;">ℹ</span> <span style="color: #0000BB; font-style: italic;">&lt;https://maps.googleapis.com/maps/api/staticmap?center=10.334686,-85.237056&amp;zoom=11&amp;size=640x640&amp;scale=2&amp;maptype=terrain&amp;language=en-EN&amp;key=xxx-xDPMFeWS7F7CgQhALUGRA9sbTSZM&gt;</span></span></span></code></pre>
-<p><img src="CrocodileBehaviorTutorial_files/figure-html/unnamed-chunk-10-1.png" width="700"></p>
-<p>##Function 7: mapBehavior() ###Mapping by Behavior</p>
+<pre><code><span><span class="co">## <span style="color: #BBBB00;">!</span> Bounding box given to Google - spatial extent only approximate.</span></span></code></pre>
+<pre><code><span><span class="co">## <span style="color: #00BBBB;">ℹ</span> <span style="color: #0000BB; font-style: italic;">&lt;https://maps.googleapis.com/maps/api/staticmap?center=10.334686,-85.237056&amp;zoom=11&amp;size=640x640&amp;scale=2&amp;maptype=terrain&amp;language=en-EN&amp;key=xxx-xDPMFeWS7F7CgQhALUGRA9sbTSZM&gt;</span></span></span></code></pre>
+<p><img src="CrocodileBehaviorTutorial_files/figure-html/unnamed-chunk-12-1.png" width="700"></p>
+</div>
+</div>
+<div class="section level3">
+<h3 id="function-7-mapbehavior">Function 7: mapBehavior()<a class="anchor" aria-label="anchor" href="#function-7-mapbehavior"></a>
+</h3>
+<div class="section level4">
+<h4 id="mapping-by-behavior">Mapping by Behavior<a class="anchor" aria-label="anchor" href="#mapping-by-behavior"></a>
+</h4>
 <p>Being able to attribute animal activity and specific behaviors to
 geographic locations is not only interesting, it is also extremely
 useful for things like conservation efforts and, in the case of these
@@ -285,16 +363,21 @@ much more.</p>
 <p>The function mapBehavior() will take the behavior associated with
 each GPS coordinate and display them as points on the map. To create
 this map, run the following code.</p>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/mapBehavior.html">mapBehavior</a></span><span class="op">(</span><span class="va">data</span>, <span class="st">"long"</span>, <span class="st">"lat"</span>, <span class="st">"behavior"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #BBBB00;">!</span> Bounding box given to Google - spatial extent only approximate.</span></span></code></pre>
 <pre><code><span><span class="co">## <span style="color: #00BBBB;">ℹ</span> <span style="color: #0000BB; font-style: italic;">&lt;https://maps.googleapis.com/maps/api/staticmap?center=10.334686,-85.237056&amp;zoom=11&amp;size=640x640&amp;scale=2&amp;maptype=terrain&amp;language=en-EN&amp;key=xxx-xDPMFeWS7F7CgQhALUGRA9sbTSZM&gt;</span></span></span></code></pre>
-<p><img src="CrocodileBehaviorTutorial_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
+<p><img src="CrocodileBehaviorTutorial_files/figure-html/unnamed-chunk-13-1.png" width="700"></p>
+</div>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 

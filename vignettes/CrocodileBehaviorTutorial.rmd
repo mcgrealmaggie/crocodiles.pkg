@@ -40,7 +40,7 @@ To install the R package enter the following code into your console. This packag
 
 ```{r}
 remotes::install_github("mcgrealmaggie/crocodiles.pkg")
-install.packages("mcgreal.pkg")
+#install.packages("mcgreal.pkg")
 library(mcgreal.pkg)
 ```
 

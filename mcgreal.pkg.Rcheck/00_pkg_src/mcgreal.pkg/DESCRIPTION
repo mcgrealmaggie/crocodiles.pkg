@@ -12,13 +12,13 @@ Description: This package is intended for users of custom-built satellite tracke
 License: MIT + file LICENSE
 Depends: R(>= 2.10), tidyverse
 Imports: tidyverse, broom, ggplot2, devtools, credentials, readr,
-        cowplot
+        cowplot, ggmap
 RoxygenNote: 7.2.3
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 NeedsCompilation: no
-Packaged: 2023-11-28 17:18:01 UTC; r2159919
+Packaged: 2023-11-28 19:02:27 UTC; r2159919
 Author: Maggie McGreal [cre, aut]
 Maintainer: Maggie McGreal <maggie.mcgreal@selu.edu>
