@@ -7,9 +7,7 @@ output: html_document
 
 # An Introduction to My R Package
 
-The purpose of this R package is for analysis and visualization of remotely transmitted movement and behavioral data from animal-borne devices.... (behavior classification, )
-This package will work with data obtained from custom-built satellite trackers developed by Dr. Youngho Shin
-This data includes measurements obtained from sensors such as: IMU, GPS, real-time clock, depth recorder, etc.
+The purpose of this R package is for analysis and visualization of remotely transmitted movement and behavioral data from animal-borne devices. This package will work with data obtained from custom-built satellite trackers developed by Dr. Youngho Shin. These data will include measurements obtained from sensors such as: IMU, GPS, real-time clock, depth recorder, and more.
 
 # Load Packages 
 ```{r}
@@ -20,19 +18,21 @@ library(devtools)
 library(credentials)
 library(readr) 
 library(cowplot)
+library(lubridate)
 ```
 
 ```{r}
 install.packages("ggmap")
-library(ggmap)
-
 install.packages("remotes")
-library(remotes)
-
 install.packages("googlesheets4")
+```
+
+```{r}
+library(ggmap)
+library(remotes)
 library(googlesheets4)
 ```
-```
+
 
 # Installing the R Package
 
@@ -56,6 +56,7 @@ croc <- read_sheet("https://docs.google.com/spreadsheets/d/17-DF8Riz_mkOL-KpFpe1
 Run the following code to preview the data.
 
 ```{r}
+
 head(croc)
 ```
 
