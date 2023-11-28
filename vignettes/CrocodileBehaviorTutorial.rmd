@@ -17,6 +17,7 @@ install.packages("broom")
 install.packages("devtools")
 install.packages("ggmap")
 install.packages("cowplot")
+install.packages("lubridate")
 ```
 
 ```{r}
