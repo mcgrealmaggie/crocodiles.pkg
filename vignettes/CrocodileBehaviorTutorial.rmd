@@ -12,17 +12,18 @@ The purpose of this R package is for analysis and visualization of remotely tran
 # Load Packages 
 
 ```{r}
-#install.packages("tidyverse")
-#install.packages("broom")
-#install.packages("devtools")
-#install.packages("ggmap")
+install.packages("tidyverse")
+install.packages("broom")
+install.packages("devtools")
+install.packages("ggmap")
+install.packages("cowplot")
 ```
 
 ```{r}
 library(tidyverse)
 library(broom)
 library(devtools)
-library(ggmap)
+library(ggplot2)
 ```
 
 
@@ -45,7 +46,7 @@ library(mcgreal.pkg)
 Install and load googlesheets4 to upload the data for this tutorial.
 
 ```{r}
-#install.packages("googlesheets4")
+install.packages("googlesheets4")
 library(googlesheets4)
 ```
 
