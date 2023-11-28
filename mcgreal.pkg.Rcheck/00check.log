@@ -28,8 +28,8 @@ See section ‘Package structure’ in the ‘Writing R Extensions’ manual.
 * checking package directory ... OK
 * checking for future file timestamps ... OK
 * checking DESCRIPTION meta-information ... NOTE
-Package listed in more than one of Depends, Imports, Suggests, Enhances:
-  ‘ggmap’
+Packages listed in more than one of Depends, Imports, Suggests, Enhances:
+  ‘ggmap’ ‘tidyverse’
 A package should be listed in only one of these fields.
 * checking top-level files ... NOTE
 Non-standard files/directories found at top level:
@@ -49,19 +49,16 @@ Non-standard files/directories found at top level:
 * checking dependencies in R code ... WARNING
 '::' or ':::' import not declared from: ‘tibble’
 'library' or 'require' calls not declared from:
-  ‘cowplot’ ‘ggplot2’
-'library' or 'require' call to ‘ggmap’ which was already attached by Depends.
-  Please remove these calls from your code.
+  ‘cowplot’ ‘ggmap’ ‘ggplot2’
 'library' or 'require' calls in package code:
-  ‘cowplot’ ‘ggplot2’
+  ‘cowplot’ ‘ggmap’ ‘ggplot2’
   Please use :: or requireNamespace() instead.
   See section 'Suggested packages' in the 'Writing R Extensions' manual.
 Namespaces in Imports field not imported from:
-  ‘broom’ ‘cowplot’ ‘credentials’ ‘devtools’ ‘dplyr’ ‘ggmap’ ‘ggplot2’
-  ‘lubridate’ ‘readr’ ‘remotes’ ‘usethis’
+  ‘broom’ ‘credentials’ ‘devtools’ ‘dplyr’ ‘ggmap’ ‘ggplot2’
+  ‘googlesheets4’ ‘readr’ ‘remotes’ ‘tidyverse’ ‘usethis’
   All declared Imports should be used.
-Packages in Depends field not imported from:
-  ‘ggmap’ ‘googlesheets4’ ‘tidyverse’
+Package in Depends field not imported from: ‘tidyverse’
   These packages need to be imported from (in the NAMESPACE file)
   for when this namespace is loaded but not attached.
 * checking S3 generic/method consistency ... OK

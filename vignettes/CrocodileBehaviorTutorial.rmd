@@ -10,27 +10,19 @@ output: html_document
 The purpose of this R package is for analysis and visualization of remotely transmitted movement and behavioral data from animal-borne devices. This package will work with data obtained from custom-built satellite trackers developed by Dr. Youngho Shin. These data will include measurements obtained from sensors such as: IMU, GPS, real-time clock, depth recorder, and more.
 
 # Load Packages 
+
+```{r}
+#install.packages("tidyverse")
+#install.packages("broom")
+#install.packages("devtools")
+#install.packages("ggmap")
+```
+
 ```{r}
 library(tidyverse)
 library(broom)
-library(ggplot2) 
-library(devtools) 
-library(credentials)
-library(readr) 
-library(cowplot)
-library(lubridate)
-```
-
-```{r}
-install.packages("ggmap")
-install.packages("remotes")
-install.packages("googlesheets4")
-```
-
-```{r}
+library(devtools)
 library(ggmap)
-library(remotes)
-library(googlesheets4)
 ```
 
 
@@ -39,12 +31,21 @@ library(googlesheets4)
 To install the R package enter the following code into your console. This package will include functions from vegan and tidyverse as well as functions unique to this package.
 
 ```{r}
-remotes::install_github("mcgrealmaggie/crocodiles.pkg")
-#install.packages("mcgreal.pkg")
+#install.packages("remotes")
+#library(remotes)
+devtools::install_github("mcgrealmaggie/crocodiles.pkg")
+install.packages("mcgreal.pkg")
 library(mcgreal.pkg)
 ```
 
 # Download Data
+
+Install and load googlesheets4 to upload the data for this tutorial.
+
+```{r}
+#install.packages("googlesheets4")
+library(googlesheets4)
+```
 
 Run the following code to obtain and store the data for this tutorial. 
 
@@ -56,7 +57,6 @@ croc <- read_sheet("https://docs.google.com/spreadsheets/d/17-DF8Riz_mkOL-KpFpe1
 Run the following code to preview the data.
 
 ```{r}
-
 head(croc)
 ```
 
