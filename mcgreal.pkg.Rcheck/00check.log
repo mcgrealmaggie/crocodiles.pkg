@@ -57,7 +57,7 @@ Non-standard files/directories found at top level:
   Please use :: or requireNamespace() instead.
   See section 'Suggested packages' in the 'Writing R Extensions' manual.
 Namespaces in Imports field not imported from:
-  ‘broom’ ‘cowplot’ ‘credentials’ ‘devtools’ ‘ggmap’ ‘ggplot2’
+  ‘broom’ ‘cowplot’ ‘credentials’ ‘devtools’ ‘dplyr’ ‘ggmap’ ‘ggplot2’
   ‘lubridate’ ‘readr’ ‘remotes’ ‘usethis’
   All declared Imports should be used.
 Packages in Depends field not imported from:
