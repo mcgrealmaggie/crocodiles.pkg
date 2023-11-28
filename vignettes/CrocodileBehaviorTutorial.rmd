@@ -11,22 +11,27 @@ The purpose of this R package is for analysis and visualization of remotely tran
 This package will work with data obtained from custom-built satellite trackers developed by Dr. Youngho Shin
 This data includes measurements obtained from sensors such as: IMU, GPS, real-time clock, depth recorder, etc.
 
-#Installing the R Package crocodiles
+#Installing the R Package
 
-To install the R package crocodiles enter the following code into your console. This package will include functions from vegan and tidyverse as well as functions unique to this package.
+To install the R package enter the following code into your console. This package will include functions from vegan and tidyverse as well as functions unique to this package.
+
+```{r}
+remotes::install_github("mcgrealmaggie/crocodiles.pkg")
+install.packages("mcgreal.pkg")
+library(mcgreal.pkg)
+```
+
+#Install Dependencies
+
 ```{r}
 install.packages("remotes")
 library(remotes)
 
 install.packages("googlesheets4")
 library(googlesheets4)
-
-remotes::install_github("mcgrealmaggie/crocodiles.pkg")
-install.packages("mcgreal.pkg")
-library(mcgreal.pkg)
 ```
 
-#Downloading Data for Package
+#Download Data
 
 Run the following code to obtain and store the data for this tutorial. 
 
@@ -36,11 +41,12 @@ croc <- read_sheet("https://docs.google.com/spreadsheets/d/17-DF8Riz_mkOL-KpFpe1
 ```
 
 Run the following code to preview the data.
+
 ```{r}
 head(croc)
 ```
 
-#Function in This Package and How to Use Them
+#Functions
 
 ##Function 1: sensorData
 ###Data Cleaning
@@ -80,6 +86,7 @@ Are there notable differences in the average ODBA values across the various croc
 Answering these questions is important for a) identifying characteristics of acceleration associated with certain behaviors, allowing us to better understand what an animal is doing from the measurements taken by the sensors, and b) determine if certain behaviors are more energetically costly than others.
 
 To better understand the relationship between ODBA variation and certain crocodile behaviors, the function runANOVA will take your data.frame, ODBA as the response variable, and behavior as the predictor, and provide a summary of the ANOVA which aims to answer the question: Does the variation in ODBA differ across behaviors in crocodiles?
+
 ```{r}
 runANOVA(data, "ODBA", "behavior")
 ```

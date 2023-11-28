@@ -3,11 +3,17 @@
 
 This package is intended for users of custom-built multi-sensor satellite trackers with the purpose of visualizing and analyzing raw data of measurements collected from sensors on-board the device: GPS, Arduino IMU, and more. 
 
+#Installing Package
+
+
 Of particular importance is the tri-axial accelerometer included in the IMU sensor. This sensor measures the change in acceleration, or motion, of an animal along 3 axes (X, Y, and Z). From the raw acceleration measurements, new metrics can be derived that describe the fine-scale patterns of motion exhibited by an animal. 
 
 When combined with and assigned to behavioral observations, these data can be used by machine learning algorithms to create, train, and validate behavioral classification models capable of identifying behaviors of free-ranging animals without direct observation. This is especially useful in the case of large cryptic carnivores, whose movements and behaviors are hard to observe directly.
 
 ![Tri-axial Acceleration](https://github.com/mcgrealmaggie/crocodiles.pkg/blob/main/Screen%20Shot%202023-11-28%20at%2011.32.51%20AM.png?raw=true)
+
+##Sensor Data
+The data used in the tutorial for this package contains 
 
 # Study scope
 ##Individual Variation in Movement Behaviors and Space Use: Implications for Human-Predator Relationships
