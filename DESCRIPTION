@@ -1,4 +1,4 @@
-Package: mcgreal.pkg
+Package: crocodiles.pkg
 Title: An R package for processing animal-borne satellite tracker data from various sensors onboard the device
 Version: 0.1
 Authors@R: c(

@@ -51,7 +51,8 @@ Subdirectory ‘data’ contains no data sets.
   Please use :: or requireNamespace() instead.
   See section 'Suggested packages' in the 'Writing R Extensions' manual.
 Namespaces in Imports field not imported from:
-  ‘broom’ ‘credentials’ ‘devtools’ ‘ggplot2’ ‘readr’ ‘tidyverse’
+  ‘broom’ ‘cowplot’ ‘credentials’ ‘devtools’ ‘ggplot2’ ‘readr’
+  ‘tidyverse’
   All declared Imports should be used.
 Package in Depends field not imported from: ‘tidyverse’
   These packages need to be imported from (in the NAMESPACE file)
