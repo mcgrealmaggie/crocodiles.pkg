@@ -39,30 +39,30 @@ Function 1: sensorData
 
 Function 2: createDatetime
 ```{r}
-data <- createDatetime(data, "date", "time")
+#data <- createDatetime(data, "date", "time")
 ```
 
 Function 3: calculateODBA
 ```{r}
-data <- calculateODBA(data = data, X, Y, Z)
+#data <- calculateODBA(data = data, X, Y, Z)
 ```
 
 Function 4: performLM
 ```{r}
-lm <- performLM(data, "ODBA", "behavior")
+#lm <- performLM(data, "ODBA", "behavior")
 ```
 
 Function 5: plotModel
 ```{r}
-plotModel(data, "behavior", "ODBA")
+#plotModel(data, "behavior", "ODBA")
 ```
 
 Function 6: mapODBA
 ```{r}
-mapODBA(data, "long", "lat", "ODBA")
+#mapODBA(data, "long", "lat", "ODBA")
 ```
 
 Function 7: mapBehavior
 ```{r}
-mapBehavior(data, "long", "lat", "behavior")
+#mapBehavior(data, "long", "lat", "behavior")
 ```
