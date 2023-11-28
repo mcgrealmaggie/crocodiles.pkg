@@ -23,8 +23,6 @@ mapBehavior <- function(data, long, lat, ODBA) {
     geom_point(data = data, aes(x = long, y = lat, color = behavior)) +
     theme(legend.position = "right")
   
-  ggsave("mapBehavior.png", plot = mapBehavior, width = 8, height = 8, units = "in")
-  
   return(mapBehavior)
   
 }

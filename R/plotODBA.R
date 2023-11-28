@@ -3,9 +3,9 @@
 
 #____________________________________________________________________________________________
 
-#' Plot the linear model results showing the nature of the relationship between crocodile behaviors and their mean ODBA, or activity levels
+#' Create a plot showing the nature of the relationship between crocodile behaviors and their mean ODBA, or activity levels
 #' 
-#' Creates a plot showing the distribution of ODBA for each behavior
+#' Creates a plot showing the distribution and variance of ODBA for each behavior
 #'
 #'
 #'@param data name of the data set containing the variables of interest
@@ -16,7 +16,7 @@
 #'@export 
 #'
 
-plotModel <- function(data, x_var, y_var) {
+plotODBA <- function(data, x_var, y_var) {
   library(ggplot2)
   plot <- ggplot(data, aes(x = !!sym(x_var), y = !!sym(y_var), color = !!sym(x_var))) +
     geom_jitter() +
@@ -26,4 +26,4 @@ plotModel <- function(data, x_var, y_var) {
   print(plot)
 }
 
-#plotModel(data, "behavior", "ODBA")
+#plotODBA(data, "behavior", "ODBA")

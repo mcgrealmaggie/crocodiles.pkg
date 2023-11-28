@@ -2,9 +2,9 @@
 #This will serve as my "clean data" function.
 #________________________________________________________________________________________________________
 
-#' Read in raw data and assign sample ID numbers to each row
+#' Read in raw sensor data, select columns of interest, and assign sample ID numbers to each row
 #' 
-#' Imports a csv file, saves it as a dataframe, and creates a sample ID column for further analysis
+#' Imports a csv file, saves it as a data.frame with only the columns relevant to the current analysis, and creates a sample ID column for further analysis
 #'
 #'
 #'@param file name of the .csv file to be read in
@@ -14,9 +14,10 @@
 #'@export 
 #'
 
-sensorData <- function(file, sample_id){
-  data <- read_csv(file)
-  data <- tibble::rowid_to_column(data, "sample_id")
+sensorData <- function(file, col_1, col_2, col_3, col_4, col_5, col_6, sample_id){
+  data <- file %>% 
+    select(all_of(c(col_1, col_2, col_3, col_4, col_5, col_6))) %>% 
+    tibble::rowid_to_column(sample_id)
   return(data)
 }
 

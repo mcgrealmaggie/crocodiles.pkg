@@ -5,64 +5,111 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-
-```{r}
-install.packages("googlesheets4")
-
-```
-
+#An Introduction to My R Package
 
 The purpose of this R package is for analysis and visualization of remotely transmitted movement and behavioral data from animal-borne devices.... (behavior classification, )
 This package will work with data obtained from custom-built satellite trackers developed by Dr. Youngho Shin
 This data includes measurements obtained from sensors such as: IMU, GPS, real-time clock, depth recorder, etc.
 
+#Installing the R Package crocodiles
+
+To install the R package crocodiles enter the following code into your console. This package will include functions from vegan and tidyverse as well as functions unique to this package.
 ```{r}
+install.packages("remotes")
+library(remotes)
+
+install.packages("googlesheets4")
 library(googlesheets4)
-googlesheets4::gs4_deauth()
-crocodiles <- read_sheet("https://docs.google.com/spreadsheets/d/1b4j42SbcN0GZR6KgHRtEmRe5-D0qzYM1mZWo9-KC4d4/edit?usp=sharing")
 
+remotes::install_github("mcgrealmaggie/crocodiles.pkg")
+install.packages("mcgreal.pkg")
+library(mcgreal.pkg)
 ```
 
+#Downloading Data for Package
+
+Run the following code to obtain and store the data for this tutorial. 
 
 ```{r}
-#Install the package from git hub
-
-devtools::install_github("mcgrealmaggie/crocodiles.pkg")
-
-
+gs4_deauth()
+croc <- read_sheet("https://docs.google.com/spreadsheets/d/17-DF8Riz_mkOL-KpFpe1K9W6FBnJdiWsziWZk_IOpiA/edit?usp=sharing")
 ```
 
-Function 1: sensorData
+Run the following code to preview the data.
 ```{r}
-#data <- sensorData("crocodile.csv")
+head(croc)
 ```
 
-Function 2: createDatetime
+#Function in This Package and How to Use Them
+
+##Function 1: sensorData
+###Data Cleaning
+
+These animal borne trackers collect continuous high frequency data, so the datasets obtained from them will be very large. For this reason, multiple kinds of analysis will be ran separately and it's useful to start by creating a new data.frame with only the columns needed for that particular analysis.
+
+This package will focus on matching behaviors, or behavioral states, to activity levels and how the animal distributes its activities across the landscape. Therefore, the function sensorData() will take our imported data set, select only the columns for longitude, latitude, acceleration measurements (X, Y, and Z), and assigned behaviors. Because we are getting rid of the timestamps, this function will also create a new column called “sample_ID” which numbers the rows in chronological order, to assure the GPS points follow the correct path.   
+
+To obtain the cleaned data.frame, enter the following code into your R console.
+
 ```{r}
-#data <- createDatetime(data, "date", "time")
+data <- sensorData(croc, "long", "lat", "X", "Y", "Z", "behavior", "sample_id")
 ```
 
-Function 3: calculateODBA
+Run the following code to ensure the new data.frame contains the appropriate columns.
+
 ```{r}
-#data <- calculateODBA(data = data, X, Y, Z)
+head(data)
 ```
 
-Function 4: performLM
+##Function 2: calculateODBA
+###Derive Metrics
+
+One of the most exciting aspects of tri-axial accelerometers are their value in quantifying proxies for energy expenditure. By taking the sum of the absolute values of the three axes of acceleration measurements, we get a metric known as ODBA, or Overall Dynamic Body Acceleration. This serves as a quantification of activity levels. Together with assigned behavioral states and GPS data, ODBA allows us to peer into the secret lives of animals; how, where, and what they spend their time and energy on. 
+
+ODBA can be calculated and added as an additional column in the data.frame with the function calculateODBA(). This function contains arguments in which the data.frame and the 3 columns containing acceleration measurements (X, Y, Z) are identified and used to produce a new data.frame with the calculated ODBA column. 
+
 ```{r}
-#lm <- performLM(data, "ODBA", "behavior")
+data <- calculateODBA(data, X, Y, Z)
 ```
 
-Function 5: plotModel
+##Function 3: runANOVA
+###Analysis of Variance (ANOVA)
+
+Are there notable differences in the average ODBA values across the various crocodile behaviors? Do different behaviors lead to statistically significant variations in activity levels?
+
+Answering these questions is important for a) identifying characteristics of acceleration associated with certain behaviors, allowing us to better understand what an animal is doing from the measurements taken by the sensors, and b) determine if certain behaviors are more energetically costly than others.
+
+To better understand the relationship between ODBA variation and certain crocodile behaviors, the function runANOVA will take your data.frame, ODBA as the response variable, and behavior as the predictor, and provide a summary of the ANOVA which aims to answer the question: Does the variation in ODBA differ across behaviors in crocodiles?
 ```{r}
-#plotModel(data, "behavior", "ODBA")
+runANOVA(data, "ODBA", "behavior")
 ```
 
-Function 6: mapODBA
+##Function 5: plotODBA
+###Visualize the relationship between ODBA and Behavior
+
+To fully understand the relationship between activity level and certain behaviors, it is useful to visualize it as a plot. The function plotODBA will use the same arguments as the ANOVA and provide you with a plot that plots ODBA levels according to behavior as well as the means and variance of ODBA for each of those behaviors. 
+
 ```{r}
-#mapODBA(data, "long", "lat", "ODBA")
+plotODBA(data, "behavior", "ODBA")
 ```
 
-Function 7: mapBehavior
+##Mapping Crocodile Movements
+##Function 6: mapODBA
+###Mapping by Activity Level
+
+The function mapODBA() creates a map from GPS data and colors the path according to corresponding ODBA values, allowing us to gain insight into where and how crocodiles distribute their energy across the landscape. 
+
 ```{r}
-#mapBehavior(data, "long", "lat", "behavior")
+mapODBA(data, "long", "lat", "ODBA")
+```
+
+##Function 7: mapBehavior()
+###Mapping by Behavior
+
+Being able to attribute animal activity and specific behaviors to geographic locations is not only interesting, it is also extremely useful for things like conservation efforts and, in the case of these crocodiles, mitigating human wildlife conflicts. Through doing this, we can see movement routes, important habitats for feeding and mating, and much more.
+
+The function mapBehavior() will take the behavior associated with each GPS coordinate and display them as points on the map. To create this map, run the following code.
+
+```{r}
+mapBehavior(data, "long", "lat", "behavior")
 ```

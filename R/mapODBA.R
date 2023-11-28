@@ -24,8 +24,6 @@ mapODBA <- function(data, long, lat, ODBA) {
               linewidth = 1.5, lineend = "round", alpha = 0.6) +
     theme(legend.position = "right")
   
-  ggsave("mapODBA.png", plot = mapODBA, width = 8, height = 8, units = "in")
-  
   return(mapODBA)
   
 }

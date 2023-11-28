@@ -2,7 +2,7 @@
 #
 #________________________________________________________________________________________-
 
-#' Perform a linear model with a categorical predictor (behavior) and a numeric response (ODBA)
+#' Perform an Analysis of Variance (ANOVA) with a categorical predictor (behavior) and a numeric response (ODBA) variables
 #' 
 #' Uses the variables from your data set to run a linear model and summarizes the results
 #'
@@ -15,12 +15,13 @@
 #'@export 
 #'
 
-performLM <- function(data, response_var, predictor_var) {
-  model_fit <- lm(formula(paste(response_var, "~", predictor_var)), data = data)
-  summary_model_fit <- summary(model_fit)
-  print(summary_model_fit)
-  return(summary_model_fit)
+runANOVA <- function(data, response_var, predictor_var){
+  anova_fit <- aov(formula(paste(response_var, "~", predictor_var)), data = data)
+  summary_anova_fit <- summary(anova_fit)
+  print(summary_anova_fit)
+  return(summary_anova_fit)
 }
 
-#lm <- performLM(data, "ODBA", "behavior")
+
+#runANOVA(data, "ODBA", "behavior")
 
