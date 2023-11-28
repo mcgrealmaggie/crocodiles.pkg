@@ -29,10 +29,11 @@ Package listed in more than one of Depends, Imports, Suggests, Enhances:
 A package should be listed in only one of these fields.
 * checking top-level files ... NOTE
 Non-standard files/directories found at top level:
-  ‘README.html’ ‘dictionary’ ‘docs’ ‘mcgreal.pkg.csv’
+  ‘README.html’ ‘crocodile.csv’ ‘docs’ ‘mcgreal.pkg.csv’
 * checking for left-over files ... OK
 * checking index information ... OK
-* checking package subdirectories ... OK
+* checking package subdirectories ... WARNING
+Subdirectory ‘data’ contains no data sets.
 * checking R files for non-ASCII characters ... OK
 * checking R files for syntax errors ... OK
 * checking whether the package can be loaded ... OK
@@ -41,7 +42,14 @@ Non-standard files/directories found at top level:
 * checking whether the namespace can be loaded with stated dependencies ... OK
 * checking whether the namespace can be unloaded cleanly ... OK
 * checking loading without being on the library search path ... OK
-* checking dependencies in R code ... NOTE
+* checking dependencies in R code ... WARNING
+'::' or ':::' import not declared from: ‘tibble’
+'library' or 'require' calls not declared from:
+  ‘cowplot’ ‘ggmap’ ‘ggplot2’
+'library' or 'require' calls in package code:
+  ‘cowplot’ ‘ggmap’ ‘ggplot2’
+  Please use :: or requireNamespace() instead.
+  See section 'Suggested packages' in the 'Writing R Extensions' manual.
 Namespaces in Imports field not imported from:
   ‘broom’ ‘credentials’ ‘devtools’ ‘ggplot2’ ‘readr’ ‘tidyverse’
   All declared Imports should be used.
@@ -52,62 +60,81 @@ Package in Depends field not imported from: ‘tidyverse’
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
 * checking R code for possible problems ... NOTE
-ODBA: no visible global function definition for ‘%>%’
-ODBA: no visible global function definition for ‘mutate’
-ODBA: no visible global function definition for ‘rename’
-ODBA: no visible global function definition for ‘:=’
-absValues: no visible global function definition for ‘%>%’
-absValues: no visible global function definition for ‘mutate’
-absValues: no visible global function definition for ‘rename’
-absValues: no visible global function definition for ‘:=’
-createBAOPlot: no visible global function definition for ‘ggplot’
-createBAOPlot: no visible global function definition for ‘aes’
-createBAOPlot: no visible global function definition for ‘geom_line’
-createBAOPlot: no visible global function definition for ‘geom_hline’
-createBAOPlot: no visible global function definition for ‘ggsave’
-createTimeSeriesPlot: no visible global function definition for
-  ‘ggplot’
-createTimeSeriesPlot: no visible global function definition for
-  ‘aes_string’
-createTimeSeriesPlot: no visible global function definition for
-  ‘geom_line’
-createTimeSeriesPlot: no visible global function definition for ‘labs’
-createTimeSeriesPlot: no visible global function definition for
-  ‘facet_wrap’
-readData: no visible global function definition for ‘read_csv’
-runLinearModel: no visible global function definition for ‘as.formula’
-runLinearModel: no visible global function definition for ‘lm’
+calculateODBA: no visible global function definition for ‘%>%’
+calculateODBA: no visible global function definition for ‘mutate’
+createDatetime: no visible binding for global variable ‘df’
+mapBehavior: no visible global function definition for
+  ‘register_google’
+mapBehavior: no visible global function definition for ‘get_map’
+mapBehavior: no visible global function definition for ‘ggmap’
+mapBehavior: no visible global function definition for ‘geom_point’
+mapBehavior: no visible global function definition for ‘aes’
+mapBehavior: no visible binding for global variable ‘behavior’
+mapBehavior: no visible global function definition for ‘theme’
+mapBehavior: no visible global function definition for ‘ggsave’
+mapODBA: no visible global function definition for ‘register_google’
+mapODBA: no visible global function definition for ‘get_map’
+mapODBA: no visible global function definition for ‘ggmap’
+mapODBA: no visible global function definition for ‘geom_path’
+mapODBA: no visible global function definition for ‘aes’
+mapODBA: no visible global function definition for ‘theme’
+mapODBA: no visible global function definition for ‘ggsave’
+performLM: no visible global function definition for ‘lm’
+performLM: no visible global function definition for ‘formula’
+plotModel: no visible global function definition for ‘ggplot’
+plotModel: no visible global function definition for ‘aes’
+plotModel: no visible global function definition for ‘sym’
+plotModel: no visible global function definition for ‘geom_jitter’
+plotModel: no visible global function definition for ‘labs’
+plotModel: no visible global function definition for ‘theme’
+plotModel: no visible global function definition for ‘stat_summary’
+sensorData: no visible global function definition for ‘read_csv’
 Undefined global functions or variables:
-  %>% := aes aes_string as.formula facet_wrap geom_hline geom_line
-  ggplot ggsave labs lm mutate read_csv rename
+  %>% aes behavior df formula geom_jitter geom_path geom_point get_map
+  ggmap ggplot ggsave labs lm mutate read_csv register_google
+  stat_summary sym theme
 Consider adding
-  importFrom("stats", "as.formula", "lm")
+  importFrom("stats", "df", "formula", "lm")
 to your NAMESPACE file.
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
 * checking Rd cross-references ... OK
-* checking for missing documentation entries ... WARNING
-Undocumented data sets:
-  ‘mcgreal.pkg’
-All user-level objects in a package should have documentation entries.
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object 'calculateODBA'
+  ‘df’ ‘x_col’ ‘y_col’ ‘z_col’
+Documented arguments not in \usage in documentation object 'calculateODBA':
+  ‘data’ ‘x’ ‘y’ ‘z’
+
+Undocumented arguments in documentation object 'mapBehavior'
+  ‘ODBA’
+Documented arguments not in \usage in documentation object 'mapBehavior':
+  ‘behavior’
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
 See chapter ‘Writing R documentation files’ in the ‘Writing R
 Extensions’ manual.
-* checking for code/documentation mismatches ... OK
-* checking Rd \usage sections ... OK
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
-* checking contents of ‘data’ directory ... OK
+* checking contents of ‘data’ directory ... WARNING
+Files not of a type allowed in a ‘data’ directory:
+  ‘dictionary’
+Please use e.g. ‘inst/extdata’ for non-R data files
+
 * checking data for non-ASCII characters ... OK
 * checking data for ASCII and uncompressed saves ... OK
 * checking files in ‘vignettes’ ... WARNING
 Files in the 'vignettes' directory but no files in 'inst/doc':
-  ‘MovementBehaviorTutorial.rmd’
+  ‘CrocodileBehaviorTutorial.rmd’
 Files named as vignettes but with no recognized vignette engine:
-   ‘vignettes/MovementBehaviorTutorial.rmd’
+   ‘vignettes/CrocodileBehaviorTutorial.rmd’
 (Is a VignetteBuilder field missing?)
 * checking examples ... NONE
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
-Status: 2 WARNINGs, 4 NOTEs
+Status: 5 WARNINGs, 3 NOTEs

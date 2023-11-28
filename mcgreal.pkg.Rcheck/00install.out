@@ -3,17 +3,6 @@
 ** R
 ** data
 ** byte-compile and prepare package for lazy loading
-New names:
-• `gyro_Y` -> `gyro_Y...16`
-• `gyro_Y` -> `gyro_Y...17`
-Rows: 2083 Columns: 27
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (1): behavior
-dbl (26): Month, Day, Year, Hour, Minute, Second, Milliseconds, Sample Time ...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ** help
 *** installing help indices
 ** building package indices
