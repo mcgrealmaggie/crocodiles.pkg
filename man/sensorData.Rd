@@ -2,9 +2,9 @@
 % Please edit documentation in R/sensorData.R
 \name{sensorData}
 \alias{sensorData}
-\title{Read in raw data and assign sample ID numbers to each row}
+\title{Read in raw sensor data, select columns of interest, and assign sample ID numbers to each row}
 \usage{
-sensorData(file, sample_id)
+sensorData(file, col_1, col_2, col_3, col_4, col_5, col_6, sample_id)
 }
 \arguments{
 \item{file}{name of the .csv file to be read in}
@@ -15,5 +15,5 @@ sensorData(file, sample_id)
 creates a dataframe containing the raw data and numerically labeled rows
 }
 \description{
-Imports a csv file, saves it as a dataframe, and creates a sample ID column for further analysis
+Imports a csv file, saves it as a data.frame with only the columns relevant to the current analysis, and creates a sample ID column for further analysis
 }

@@ -29,11 +29,10 @@ Package listed in more than one of Depends, Imports, Suggests, Enhances:
 A package should be listed in only one of these fields.
 * checking top-level files ... NOTE
 Non-standard files/directories found at top level:
-  ‘README.html’ ‘crocodile.csv’ ‘docs’ ‘mcgreal.pkg.csv’
+  ‘README.html’ ‘docs’ ‘mcgreal.pkg.csv’
 * checking for left-over files ... OK
 * checking index information ... OK
-* checking package subdirectories ... WARNING
-Subdirectory ‘data’ contains no data sets.
+* checking package subdirectories ... OK
 * checking R files for non-ASCII characters ... OK
 * checking R files for syntax errors ... OK
 * checking whether the package can be loaded ... OK
@@ -63,7 +62,6 @@ Package in Depends field not imported from: ‘tidyverse’
 * checking R code for possible problems ... NOTE
 calculateODBA: no visible global function definition for ‘%>%’
 calculateODBA: no visible global function definition for ‘mutate’
-createDatetime: no visible binding for global variable ‘df’
 mapBehavior: no visible global function definition for
   ‘register_google’
 mapBehavior: no visible global function definition for ‘get_map’
@@ -72,36 +70,41 @@ mapBehavior: no visible global function definition for ‘geom_point’
 mapBehavior: no visible global function definition for ‘aes’
 mapBehavior: no visible binding for global variable ‘behavior’
 mapBehavior: no visible global function definition for ‘theme’
-mapBehavior: no visible global function definition for ‘ggsave’
 mapODBA: no visible global function definition for ‘register_google’
 mapODBA: no visible global function definition for ‘get_map’
 mapODBA: no visible global function definition for ‘ggmap’
 mapODBA: no visible global function definition for ‘geom_path’
 mapODBA: no visible global function definition for ‘aes’
 mapODBA: no visible global function definition for ‘theme’
-mapODBA: no visible global function definition for ‘ggsave’
-performLM: no visible global function definition for ‘lm’
-performLM: no visible global function definition for ‘formula’
-plotModel: no visible global function definition for ‘ggplot’
-plotModel: no visible global function definition for ‘aes’
-plotModel: no visible global function definition for ‘sym’
-plotModel: no visible global function definition for ‘geom_jitter’
-plotModel: no visible global function definition for ‘labs’
-plotModel: no visible global function definition for ‘theme’
-plotModel: no visible global function definition for ‘stat_summary’
-sensorData: no visible global function definition for ‘read_csv’
+plotODBA: no visible global function definition for ‘ggplot’
+plotODBA: no visible global function definition for ‘aes’
+plotODBA: no visible global function definition for ‘sym’
+plotODBA: no visible global function definition for ‘geom_jitter’
+plotODBA: no visible global function definition for ‘labs’
+plotODBA: no visible global function definition for ‘theme’
+plotODBA: no visible global function definition for ‘stat_summary’
+runANOVA: no visible global function definition for ‘aov’
+runANOVA: no visible global function definition for ‘formula’
+sensorData: no visible global function definition for ‘%>%’
+sensorData: no visible global function definition for ‘select’
+sensorData: no visible global function definition for ‘all_of’
 Undefined global functions or variables:
-  %>% aes behavior df formula geom_jitter geom_path geom_point get_map
-  ggmap ggplot ggsave labs lm mutate read_csv register_google
-  stat_summary sym theme
+  %>% aes all_of aov behavior formula geom_jitter geom_path geom_point
+  get_map ggmap ggplot labs mutate register_google select stat_summary
+  sym theme
 Consider adding
-  importFrom("stats", "df", "formula", "lm")
+  importFrom("stats", "aov", "formula")
 to your NAMESPACE file.
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
 * checking Rd cross-references ... OK
-* checking for missing documentation entries ... OK
+* checking for missing documentation entries ... WARNING
+Undocumented data sets:
+  ‘croc’
+All user-level objects in a package should have documentation entries.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
 * checking for code/documentation mismatches ... OK
 * checking Rd \usage sections ... WARNING
 Undocumented arguments in documentation object 'calculateODBA'
@@ -113,6 +116,9 @@ Undocumented arguments in documentation object 'mapBehavior'
   ‘ODBA’
 Documented arguments not in \usage in documentation object 'mapBehavior':
   ‘behavior’
+
+Undocumented arguments in documentation object 'sensorData'
+  ‘col_1’ ‘col_2’ ‘col_3’ ‘col_4’ ‘col_5’ ‘col_6’
 
 Functions with \usage entries need to have the appropriate \alias
 entries, and all their arguments documented.
