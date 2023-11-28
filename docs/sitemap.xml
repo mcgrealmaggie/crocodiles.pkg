@@ -7,6 +7,9 @@
     <loc>/LICENSE-text.html</loc>
   </url>
   <url>
+    <loc>/articles/CrocodileBehaviorTutorial.html</loc>
+  </url>
+  <url>
     <loc>/articles/MovementBehaviorTutorial.html</loc>
   </url>
   <url>
@@ -25,12 +28,33 @@
     <loc>/reference/absValues.html</loc>
   </url>
   <url>
+    <loc>/reference/calculateODBA.html</loc>
+  </url>
+  <url>
     <loc>/reference/createBAOPlot.html</loc>
+  </url>
+  <url>
+    <loc>/reference/createDatetime.html</loc>
   </url>
   <url>
     <loc>/reference/index.html</loc>
   </url>
   <url>
+    <loc>/reference/mapBehavior.html</loc>
+  </url>
+  <url>
+    <loc>/reference/mapODBA.html</loc>
+  </url>
+  <url>
+    <loc>/reference/performLM.html</loc>
+  </url>
+  <url>
+    <loc>/reference/plotModel.html</loc>
+  </url>
+  <url>
     <loc>/reference/readData.html</loc>
+  </url>
+  <url>
+    <loc>/reference/sensorData.html</loc>
   </url>
 </urlset>
