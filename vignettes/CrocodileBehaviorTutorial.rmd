@@ -34,7 +34,7 @@ devtools::install_github("mcgrealmaggie/crocodiles.pkg")
 
 Function 1: sensorData
 ```{r}
-data <- sensorData("crocodile.csv")
+#data <- sensorData("crocodile.csv")
 ```
 
 Function 2: createDatetime
