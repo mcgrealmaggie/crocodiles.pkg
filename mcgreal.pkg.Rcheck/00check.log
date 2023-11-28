@@ -11,12 +11,7 @@
 * this is package ‘mcgreal.pkg’ version ‘0.1’
 * package encoding: UTF-8
 * checking package namespace information ... OK
-* checking package dependencies ... NOTE
-Depends: includes the non-default packages:
-  'tidyverse', 'ggmap', 'googlesheets4', 'ggplot2', 'devtools',
-  'cowplot', 'remotes', 'usethis'
-Adding so many packages to the search path is excessive and importing
-selectively is preferable.
+* checking package dependencies ... OK
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
@@ -33,8 +28,8 @@ See section ‘Package structure’ in the ‘Writing R Extensions’ manual.
 * checking package directory ... OK
 * checking for future file timestamps ... OK
 * checking DESCRIPTION meta-information ... NOTE
-Packages listed in more than one of Depends, Imports, Suggests, Enhances:
-  ‘tidyverse’ ‘ggplot2’ ‘devtools’ ‘cowplot’ ‘remotes’ ‘ggmap’ ‘googlesheets4’
+Package listed in more than one of Depends, Imports, Suggests, Enhances:
+  ‘ggmap’
 A package should be listed in only one of these fields.
 * checking top-level files ... NOTE
 Non-standard files/directories found at top level:
@@ -53,16 +48,20 @@ Non-standard files/directories found at top level:
 * checking loading without being on the library search path ... OK
 * checking dependencies in R code ... WARNING
 '::' or ':::' import not declared from: ‘tibble’
-'library' or 'require' calls to packages already attached by Depends:
-  ‘cowplot’ ‘ggmap’ ‘ggplot2’
+'library' or 'require' calls not declared from:
+  ‘cowplot’ ‘ggplot2’
+'library' or 'require' call to ‘ggmap’ which was already attached by Depends.
   Please remove these calls from your code.
+'library' or 'require' calls in package code:
+  ‘cowplot’ ‘ggplot2’
+  Please use :: or requireNamespace() instead.
+  See section 'Suggested packages' in the 'Writing R Extensions' manual.
 Namespaces in Imports field not imported from:
   ‘broom’ ‘cowplot’ ‘credentials’ ‘devtools’ ‘ggmap’ ‘ggplot2’
-  ‘googlesheets4’ ‘lubridate’ ‘readr’ ‘remotes’ ‘tidyverse’
+  ‘lubridate’ ‘readr’ ‘remotes’ ‘usethis’
   All declared Imports should be used.
 Packages in Depends field not imported from:
-  ‘cowplot’ ‘devtools’ ‘ggmap’ ‘ggplot2’ ‘googlesheets4’ ‘remotes’
-  ‘tidyverse’ ‘usethis’
+  ‘ggmap’ ‘googlesheets4’ ‘tidyverse’
   These packages need to be imported from (in the NAMESPACE file)
   for when this namespace is loaded but not attached.
 * checking S3 generic/method consistency ... OK
@@ -153,4 +152,4 @@ Files named as vignettes but with no recognized vignette engine:
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
-Status: 6 WARNINGs, 4 NOTEs
+Status: 6 WARNINGs, 3 NOTEs
