@@ -20,10 +20,12 @@ library(devtools)
 library(credentials)
 library(readr) 
 library(cowplot)
-library(ggmap)
 ```
 
 ```{r}
+install.packages("ggmap")
+library(ggmap)
+
 install.packages("remotes")
 library(remotes)
 
