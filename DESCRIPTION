@@ -10,7 +10,7 @@ Authors@R: c(
 Description: This package is intended for users of custom-built satellite trackers with the purpose of visualizing and analyzing raw data of measurements collected from various sensors onboard the device: GPS, Arduino IMU, and more. 
 License: MIT + file LICENSE
 Depends:
-  R(>= 2.10), tidyverse
+  R(>= 2.10), tidyverse, ggmap
 Imports: 
   tidyverse, broom, ggplot2, devtools, credentials, readr, cowplot, lubridate, ggmap, remotes, googlesheets4
 RoxygenNote: 7.2.3
