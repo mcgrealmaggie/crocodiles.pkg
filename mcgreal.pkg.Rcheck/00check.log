@@ -28,8 +28,8 @@ See section ‘Package structure’ in the ‘Writing R Extensions’ manual.
 * checking package directory ... OK
 * checking for future file timestamps ... OK
 * checking DESCRIPTION meta-information ... NOTE
-Packages listed in more than one of Depends, Imports, Suggests, Enhances:
-  ‘ggmap’ ‘tidyverse’
+Package listed in more than one of Depends, Imports, Suggests, Enhances:
+  ‘tidyverse’
 A package should be listed in only one of these fields.
 * checking top-level files ... NOTE
 Non-standard files/directories found at top level:
@@ -55,8 +55,8 @@ Non-standard files/directories found at top level:
   Please use :: or requireNamespace() instead.
   See section 'Suggested packages' in the 'Writing R Extensions' manual.
 Namespaces in Imports field not imported from:
-  ‘broom’ ‘credentials’ ‘devtools’ ‘dplyr’ ‘ggmap’ ‘ggplot2’
-  ‘googlesheets4’ ‘readr’ ‘remotes’ ‘tidyverse’ ‘usethis’
+  ‘broom’ ‘cowplot’ ‘credentials’ ‘devtools’ ‘dplyr’ ‘ggmap’ ‘ggplot2’
+  ‘googlesheets4’ ‘lubridate’ ‘readr’ ‘remotes’ ‘tidyverse’
   All declared Imports should be used.
 Package in Depends field not imported from: ‘tidyverse’
   These packages need to be imported from (in the NAMESPACE file)
