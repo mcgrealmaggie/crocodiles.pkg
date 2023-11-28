@@ -31,8 +31,6 @@ library(ggmap)
 To install the R package enter the following code into your console. This package will include functions from vegan and tidyverse as well as functions unique to this package.
 
 ```{r}
-#install.packages("remotes")
-#library(remotes)
 devtools::install_github("mcgrealmaggie/crocodiles.pkg")
 install.packages("mcgreal.pkg")
 library(mcgreal.pkg)
